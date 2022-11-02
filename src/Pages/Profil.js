@@ -1,5 +1,5 @@
-import '../App.css'
-const Porfil = () => {
+
+const Profil = () => {
     return (
       <div>
        <h1>profil</h1>  
@@ -7,4 +7,4 @@ const Porfil = () => {
     )
   }
   
-export default Porfil
+export default Profil

@@ -1,4 +1,4 @@
-import '../App.css'
+
 const Paiements = () => {
     return (
       <div>
