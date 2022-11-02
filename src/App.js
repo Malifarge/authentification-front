@@ -13,8 +13,8 @@ import NotFound from "./Pages/NotFound"
 const App = () =>{
   return(
     <BrowserRouter>
-      <Routes>
-      <Routes>
+      <UserContextProvider>
+        <Routes>
           <Route path='/' element={<Home/>} />
           <Route path ='/favorites' element={<Favorites/>} />
           <Route path='/paiement' element={<Paiements/>} />
@@ -25,7 +25,8 @@ const App = () =>{
           <Route path='/notfound' element={<NotFound/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
-      </Routes>
+      </UserContextProvider>
+        
     </BrowserRouter>
   )
 }
