@@ -1,5 +1,9 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom"
+<<<<<<< HEAD
 import { UserContextProvider } from './contexts/User'
+=======
+
+>>>>>>> 274d58a5c71e56e24d154d59041fb7b958514a24
 import Home from "./Pages/Home"
 import Favorites from "./Pages/Favorie"
 import Paiements from "./Pages/Paiement"
@@ -14,7 +18,7 @@ import NotFound from "./Pages/NotFound"
 const App = () =>{
   return(
     <BrowserRouter>
-      <UserContextProvider>
+      {/* <UserContextProvider> */}
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path ='/favorites' element={<Favorites/>} />
@@ -25,7 +29,7 @@ const App = () =>{
           <Route path='/signin' element={<SignIn/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
-      </UserContextProvider>
+      {/* </UserContextProvider> */}
         
     </BrowserRouter>
   )
