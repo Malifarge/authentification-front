@@ -9,6 +9,7 @@ import Products from "./Pages/Products"
 import Profil from "./Pages/Profil"
 import SignIn from "./Pages/SignIn"
 import NotFound from "./Pages/NotFound"
+import Messages from "./Pages/Messages"
 
 
 
@@ -21,6 +22,7 @@ const App = () =>{
           <Route path ='/favorites' element={<Favorites/>} />
           <Route path='/paiement' element={<Paiements/>} />
           <Route path='/:id' element={<Product/>} />
+          <Route path='/:id/messages' element={<Messages/>} />
           <Route path='/products' element={<Products/>} />
           <Route path='/profil' element={<Profil/>} />
           <Route path='/signin' element={<SignIn/>} />
