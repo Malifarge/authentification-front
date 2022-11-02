@@ -1,4 +1,5 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom"
+import { UserContextProvider } from './contexts/User'
 import Home from "./Pages/Home"
 import Favorites from "./Pages/Favorie"
 import Paiements from "./Pages/Paiement"
