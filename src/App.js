@@ -22,7 +22,6 @@ const App = () =>{
           <Route path='/products' element={<Products/>} />
           <Route path='/profil' element={<Profil/>} />
           <Route path='/signin' element={<SignIn/>} />
-          <Route path='/notfound' element={<NotFound/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
       </UserContextProvider>
