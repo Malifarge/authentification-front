@@ -6,7 +6,7 @@ import Paiements from "./Pages/Paiement"
 import Product from "./Pages/Product"
 import Products from "./Pages/Products"
 import Profil from "./Pages/Profil"
-import SignIn from "./Pages/SingIn"
+import SignIn from "./Pages/SignIn"
 import NotFound from "./Pages/NotFound"
 
 
