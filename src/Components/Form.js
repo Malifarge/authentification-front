@@ -4,8 +4,9 @@ import axios from "axios"
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import usePagination from "@mui/material/usePagination/usePagination"
 
-const Form = ({type}) =>{
+const Form = ({type,update}) =>{
 
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -36,11 +37,16 @@ const Form = ({type}) =>{
     const handleSignSubmit = e =>{
         e.preventDefault()
         onFileUpload()
+        if(update){
+            console.log(update)
+        }else{
         console.log(`Sign with email: ${email}, password : ${password}, Picture: ${picture}`);
+        }
     }
 
     const handleLogSubmit = e =>{
         e.preventDefault()
+
         console.log(`Login with email: ${email}, password : ${password}`);
     }
 

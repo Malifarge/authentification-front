@@ -12,6 +12,7 @@ import Profil from "./Pages/Profil"
 import SignIn from "./Pages/SignIn"
 import NotFound from "./Pages/NotFound"
 import Messages from "./Pages/Messages"
+import EditProfil from "./Pages/EditProfil"
 
 const App = () =>{
   return(
@@ -26,6 +27,7 @@ const App = () =>{
           <Route path='/products' element={<Products/>} />
           <Route path='/profil' element={<Profil/>} />
           <Route path='/signin' element={<SignIn/>} />
+          <Route path='/EditProfil' element={<EditProfil/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
       </UserContextProvider>

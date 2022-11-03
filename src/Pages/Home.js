@@ -1,13 +1,8 @@
-import Form from "../Components/Form"
+import Login from "../Components/Templates/Login"
 
 const Home = () => {
 
-    return (
-      <div>
-       <h1>Home</h1>
-      <Form type="Login"/>
-      </div>
-    )
+    return <Login/>
   }
   
 export default Home

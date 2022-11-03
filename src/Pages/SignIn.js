@@ -1,13 +1,7 @@
-import Form from "../Components/Form"
+import CreateUser from "../Components/Templates/CreateUser"
 
 const SignIn = () => {
-    return (
-      <div>
-       <h1>SignIn</h1>  
-      <Form type="SignIn"/>
-
-      </div>
-    )
+    return <CreateUser/>
   }
   
 export default SignIn
