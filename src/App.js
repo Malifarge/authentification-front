@@ -1,5 +1,6 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 import { UserContextProvider } from './Context/User'
+
 import './App.css'
 
 import Home from "./Pages/Home"
@@ -11,9 +12,6 @@ import Profil from "./Pages/Profil"
 import SignIn from "./Pages/SignIn"
 import NotFound from "./Pages/NotFound"
 import Messages from "./Pages/Messages"
-
-
-
 
 const App = () =>{
   return(
