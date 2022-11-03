@@ -23,7 +23,7 @@ const Form = ({type,update}) =>{
 
     useEffect(() => {
         if (user) {
-          navigate('/profile')
+          navigate('/profil')
         }
       }, [user])
 
