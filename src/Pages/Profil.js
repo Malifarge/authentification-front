@@ -13,12 +13,13 @@ const Profil = () => {
 
   const{user} = useContext(UserContext)
 
+
   useEffect(()=>{
     if(!user){
       navigate("/")
     }
   },[])
-    return <Profile user={user} favorites={favorites}/>
+    return <div>{user && <Profile user={user} favorites={favorites}/>}</div>
   }
   
 export default Profil
