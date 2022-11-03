@@ -1,17 +1,31 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import Input from "./Input"
 import Buttons from "./Button"
 import axios from "axios"
 
-import { useState } from "react"
+import { useState, useContext,useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
+import { UserContext } from '../Context/User'
+
+import { login,CreateUser } from "../API/Auth"
+
 const Form = ({type,update}) =>{
+
+    const navigate= useNavigate()
+
+    const { setToken, user, setUser } = useContext(UserContext)
 
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [picture,setPicture] = useState(null)
 
-    const navigate= useNavigate()
+    useEffect(() => {
+        if (user) {
+          navigate('/profile')
+        }
+      }, [user])
 
     const handleEmailChange = e =>{
         setEmail(e.target.value)
@@ -33,20 +47,33 @@ const Form = ({type,update}) =>{
         navigate("/signin")
     }
 
-    const handleSignSubmit = e =>{
+    const handleSignSubmit = async e =>{
         e.preventDefault()
         onFileUpload()
         if(update){
             console.log(update)
         }else{
-        console.log(`Sign with email: ${email}, password : ${password}, Picture: ${picture}`);
+            const user = {
+                email,
+                password,
+                picture
+              }
+            const createUser = await CreateUser(user)
+            setUser(createUser)
         }
     }
 
-    const handleLogSubmit = e =>{
+    const handleLogSubmit = async e =>{
         e.preventDefault()
 
-        console.log(`Login with email: ${email}, password : ${password}`);
+        const user = {
+            email,
+            password
+          }
+      
+          const { token } = await login(user)
+          setToken(token)
+        
     }
 
     const onFileUpload = () => {
