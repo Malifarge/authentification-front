@@ -1,11 +1,15 @@
 import { useContext,useEffect} from "react"
 import { useNavigate } from "react-router-dom"
 
+import Profile from "../Components/Templates/Profile"
+
 import { UserContext } from '../Context/User'
 
 const Profil = () => {
 
   const navigate= useNavigate()
+
+  const favorites=[]
 
   const{user} = useContext(UserContext)
 
@@ -14,16 +18,7 @@ const Profil = () => {
       navigate("/")
     }
   },[])
-
-  // useEffect(()=>{
-  //   console.log(user);
-  // },[user])
-
-    return (
-      <div>
-       <h1>profil</h1>  
-      </div>
-    )
+    return <Profile user={user} favorites={favorites}/>
   }
   
 export default Profil

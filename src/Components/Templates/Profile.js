@@ -1,22 +1,24 @@
 import Card from "../Card";
 import SideBar from "../SideBar";
 
-const Profile = (user, favorites) => {
+
+const Profile = ({user, favorite}) => {
+
   return (
     <div className="main-container">
     <SideBar/>
     <div className="user">
     <img src="" alt="profile"/>
-    <h1>{user.name}</h1>
+    <h1>{user.firstName}</h1>
     </div>
-    <div className="favorites">
+    {/* <div className="favorites">
         <h2>Favorites</h2>
         <div>{favorites.map((favorite) => {
             return(
             <Card/>
             )
         })}</div>
-    </div>
+    </div> */}
     </div>
   );
 };
