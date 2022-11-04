@@ -5,7 +5,7 @@ import SideBar from "../SideBar";
 const Homepage = ({offers}) => {   
 
   return (
-    <div className="main-container container">
+    <div className="home-container container">
     <SideBar/>
     <div className="offers">
     {offers.map((offer) => {

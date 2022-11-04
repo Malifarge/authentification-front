@@ -93,7 +93,13 @@ const Form = ({ type, update, className }) => {
 
   if (type === "SignUp") {
     return (
-      <form className={className} onSubmit={handleSignSubmit}>
+      <form
+        action="/single"
+        method="POST"
+        encType="multipart/form-data"
+        className={className}
+        onSubmit={handleSignSubmit}
+      >
         <Input
           label="firstname"
           type="text"
@@ -123,6 +129,7 @@ const Form = ({ type, update, className }) => {
           variant="outlined"
         />
         <Input
+          name="image"
           label="profil picture"
           type="file"
           handleChange={handlePictureChange}

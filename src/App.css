@@ -35,12 +35,13 @@ body{
 .login{
   width: 40%;
   height: 70vh;
-  background: #242424;
   border-radius: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #242424;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.25)
 }
 
 .login form{
@@ -71,6 +72,39 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+
+.new-offer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-offer-container{
+  width: 50%;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 18px;
+  background: #242424;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.25)
+}
+
+.create-offer-container h2{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.create-offer-container form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
 }
 
  h1{

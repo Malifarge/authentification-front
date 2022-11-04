@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 
-const Input = ({ type, required, label, handleChange, variant }) => {
+const Input = ({ type, required, label, handleChange, variant, name }) => {
   return (
     <TextField
       style={{
@@ -9,6 +9,7 @@ const Input = ({ type, required, label, handleChange, variant }) => {
         borderRadius: "13px",
         width: "90%",
       }}
+      name={name}
       required={required}
       type={type}
       label={label}
