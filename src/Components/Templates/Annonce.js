@@ -1,8 +1,9 @@
 import Card from '../Card'
-const Annonce = ({article,}) => {
+
+const Annonce = ({product}) => {
   return <>
   <div>
-    <h1>{product.Price}</h1>
+    {/* <h1>{product.Price}</h1>
     <h2>{product.sender}</h2>
   </div>
   <div>
@@ -15,10 +16,10 @@ const Annonce = ({article,}) => {
     <h3>TITLE PRODUCTE</h3>
     <div>{products.map((product) => {
       return(
-        <Card/>
+        <Card product={product}/>
       )
     })}
-  </div>
+  </div> */}
   </div>
   </>
 };

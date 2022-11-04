@@ -1,10 +1,6 @@
-
+import Annonce from "../Components/Templates/Annonce"
 const Product = () => {
-    return (
-      <div>
-       <h1>product</h1>  
-      </div>
-    )
+    return <Annonce/>
   }
   
 export default Product
