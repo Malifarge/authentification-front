@@ -1,18 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { UserPicture } from "../API/Picture";
 
 import New from '../images/New.png'
+import logoutimg from '../images/logout.png'
+
+import { UserContext } from "../Context/User";
 
 const SideBar = ({ user }) => {
 
   const [picture,setPicture] =useState(null)
 
-const Navigate = useNavigate()
+  const{logout} =useContext(UserContext)
+
+const navigate = useNavigate()
 
 const handleNavigate = (link) => {
-    Navigate(link)
+    navigate(link)
+}
+
+const handleLogoutClick = () =>{
+  logout()
+  navigate("/")
 }
 
 useEffect(()=>{
@@ -28,7 +38,7 @@ useEffect(()=>{
     {/* <img src="" alt="Conversation" onClick={() => handleNavigate("/conversation")} /> */}
     <img src={New} alt="New" onClick={() => handleNavigate("/create-annonce")} />
     </div>
-    <img src="" alt="Deconnexion" onClick={() => handleNavigate("/login")} />
+    <img src={logoutimg} alt="Deconnexion" onClick={handleLogoutClick} />
 
   </div>;
 };
