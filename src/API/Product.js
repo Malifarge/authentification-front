@@ -88,6 +88,19 @@ const Messages = async (id) =>{
       return response
   }
 
+//   seller
+
+const Seller = async (id) => {
+    const request = await fetch(`https://authentification-backend.herokuapp.com/product/seller/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    const response = await request.json()
+  
+    return response
+  }
+
   export {Product,Products,CreateProduct,UpdateProduct,DeleteProduct,Messages,CreateMessages}
 
 
