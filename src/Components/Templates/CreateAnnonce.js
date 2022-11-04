@@ -46,7 +46,7 @@ const handleSubmit = async () => {
       <Input label="Product name" type="text" handleChange={handleProductNameChange} required variant="outlined" />
       <Input label="description" type='text' handleChange={handleDescriptionChange}  required variant='outlined'/>
       <Input label="price" type='number' handleChange={handlePriceChange}  required variant='outlined'/>
-      <Input label="picture" type='file' name='image' single handleChange={handlePictureChange} required variant='outlined'/>  
+      <Input label="picture" type='file' name='image' single handleChange={handlePictureChange} variant='outlined'/>  
       <Buttons variant="outlined" type="submit" text="Create" color="#FFEE55" background="#242424" border="#FFEE55" />      
     </form>
   </div>
