@@ -30,11 +30,10 @@ const handleSubmit = async () => {
     description,
     price,
     picture
-  }
+}
   const createProduct = await CreateProduct(product)
   setProduct(createProduct)
 }
-
   return(
   <div>
     <form onSubmit={handleSubmit}>
