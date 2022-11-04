@@ -10,7 +10,7 @@ const Login = () => {
     <section>
         <img src={Logo} alt='Vibes'/>
         <article>
-            <H1><span>V</span>ibes<span>.</span></H1>
+            <H1><span>V</span>ibes<span className='point'>.</span> </H1>
             <Form type="Login"/>
         </article>
     </section>
