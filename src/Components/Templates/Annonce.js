@@ -6,7 +6,8 @@ const Annonce = ({ product, products }) => {
   return (
     <>
       <SideBar />
-      <div>
+
+      <div className="container">
         <h1>{product.productPrice}$</h1>
         <h2>{product.productName}</h2>
       </div>

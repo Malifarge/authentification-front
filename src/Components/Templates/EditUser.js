@@ -5,7 +5,7 @@ import Logo from '../../images/VibesLogo.png'
 
 const EditUser = () => {
   return (
-    <section>
+    <section className='container'>
         <img src={Logo} alt='Vibes'/>
         <article>
             <H1><span>V</span>ibes<span>.</span></H1>

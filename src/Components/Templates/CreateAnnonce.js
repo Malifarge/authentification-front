@@ -36,7 +36,7 @@ const handleSubmit = async () => {
   console.log(product);
 }
   return(
-  <div>
+  <div className="container">
     <form onSubmit={handleSubmit}>
       <Input label="Product name" type="text" handleChange={handleProductNameChange} required variant="outlined" />
       <Input label="description" type='text' handleChange={handleDescriptionChange}  required variant='outlined'/>
