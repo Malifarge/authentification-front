@@ -20,7 +20,7 @@ const Profile = ({user, favorite}) => {
 
   return (
     <div className="main-container">
-    <SideBar/>
+    <SideBar user={user}/>
     <div className="user">
     <img src="" alt="profile"/>
     <h1>{user.firstName}</h1>
