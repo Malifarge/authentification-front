@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Input from "./Input";
-import Buttons from "./Button";
-import { CreateProduct } from "../API/Product"
+import Input from "../Input";
+import Buttons from "../Button";
+import { CreateProduct } from "../../API/Product"
 
 
-const CreateAnnonce = () => {
+const Createannonce = () => {
   const [product, setProduct] = useState(null)
   const [productName, setProductName] = useState('')
   const [description, setDescription] = useState('')
@@ -25,25 +25,26 @@ const CreateAnnonce = () => {
 }
 
 const handleSubmit = async () => {
-  const product = {
+  const Newproduct = {
     productName, 
     description,
     price,
     picture
-  }
-  const createProduct = await CreateProduct(product)
+}
+  const createProduct = await CreateProduct(Newproduct)
   setProduct(createProduct)
+  console.log(product);
 }
   return(
   <div>
     <form onSubmit={handleSubmit}>
-    <Input label="Product name" type="text" handleChange={handleProductNameChange} required variant="outlined" />
-    <Input label="description" type='text' handleChange={handleDescriptionChange}  required variant='outlined'/>
-    <Input label="price" type='number' handleChange={handlePriceChange}  required variant='outlined'/>
-    <Input label="picture" type='file' handleChange={handlePictureChange} required variant='outlined'/>  
-    <Buttons variant="outlined" type="submit" text="Create" color="#FFEE55" background="#242424" border="#FFEE55" />      
+      <Input label="Product name" type="text" handleChange={handleProductNameChange} required variant="outlined" />
+      <Input label="description" type='text' handleChange={handleDescriptionChange}  required variant='outlined'/>
+      <Input label="price" type='number' handleChange={handlePriceChange}  required variant='outlined'/>
+      <Input label="picture" type='file' handleChange={handlePictureChange} required variant='outlined'/>  
+      <Buttons variant="outlined" type="submit" text="Create" color="#FFEE55" background="#242424" border="#FFEE55" />      
     </form>
   </div>
   )};
 
-export default CreateAnnonce;
+export default Createannonce;
