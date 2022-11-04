@@ -129,7 +129,7 @@ const Form = ({ type, update, className }) => {
           required
           variant="outlined"
         />
-        <div>
+        <div className="buttons">
           <Buttons
             variant="outlined"
             type="submit"

@@ -4,7 +4,7 @@ import Logo from "../../images/VibesLogo.png";
 
 const Login = () => {
   return (
-    <section className="login-container">
+    <section className="login-container container">
       <img src={Logo} alt="Vibes" />
       <article className="login">
         <H1>
