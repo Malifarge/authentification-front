@@ -16,7 +16,7 @@ useEffect(()=>{
   if(!user){
     navigate("/")
   }
-},[])
+},[user])
 
     return <Homepage/>
   }
