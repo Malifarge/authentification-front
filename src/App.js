@@ -12,6 +12,7 @@ import Profil from "./Pages/Profil"
 import SignUp from "./Pages/SignUp"
 import NotFound from "./Pages/NotFound"
 import Messages from "./Pages/Messages"
+import CreateAnnonce from "./Pages/CreateAnnonce"
 import EditProfil from "./Pages/EditProfil"
 
 const App = () =>{
@@ -28,6 +29,7 @@ const App = () =>{
           <Route path='/profil' element={<Profil/>} />
           <Route path='/signUp' element={<SignUp/>} />
           <Route path='/EditProfil' element={<EditProfil/>} />
+          <Route path='create-annonce'element={<CreateAnnonce/>}/>
           <Route path='/*' element={<NotFound/>} />
         </Routes>
       </UserContextProvider>
