@@ -1,15 +1,29 @@
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+
+import { UserContext } from "../../Context/User";
+
 import Card from "../Card";
 import SideBar from "../SideBar";
 
+import { Products } from "../../API/Product";
 
-const Homepage = ({offers}) => {   
+const Homepage = () => {   
 
+  const [products,setProducts] = useState([])
+
+  const {user} =useContext(UserContext)
+
+  useEffect(()=>{
+    const products = Products()
+    setProducts(products)
+  },[])
   return (
     <div className="main-container container">
-    <SideBar/>
+    {user && <SideBar user={user}/>}
     <div className="offers">
-    {offers.map((offer) => {
-    return (<Card product={offer} />)
+    {products && products.map((product) => {
+    return (<Card product={product} key={product.productName} />)
     })}
     </div>
     </div>

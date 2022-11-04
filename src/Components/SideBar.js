@@ -14,21 +14,21 @@ const SideBar = ({ user }) => {
 
   const{logout} =useContext(UserContext)
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
-const handleNavigate = (link) => {
-    navigate(link)
-}
+  const handleNavigate = (link) => {
+      navigate(link)
+  }
 
-const handleLogoutClick = () =>{
-  logout()
-  navigate("/")
-}
+  const handleLogoutClick = () =>{
+    logout()
+    navigate("/")
+  }
 
-useEffect(()=>{
-  const {picture} = UserPicture(user.id)
-  setPicture(picture)
-},[user])
+  useEffect(()=>{
+    const {picture} = UserPicture(user.id)
+    setPicture(picture)
+  },[user])
 
 
   return <div className="sidebar">
