@@ -17,6 +17,8 @@ const Form = ({type,update}) =>{
 
     const { setToken, user, setUser } = useContext(UserContext)
 
+    const [firstName,setFirstName]=useState("")
+    const [lastName,setLastName]=useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [picture,setPicture] = useState(null)
@@ -27,6 +29,14 @@ const Form = ({type,update}) =>{
         }
       }, [user])
 
+      const handleFirstNameChange = e =>{
+        setFirstName(e.target.value)
+    }
+
+    const handleLastNameChange = e =>{
+        setLastName(e.target.value)
+    }
+
     const handleEmailChange = e =>{
         setEmail(e.target.value)
     }
@@ -36,7 +46,8 @@ const Form = ({type,update}) =>{
     }
 
     const handlePictureChange = e =>{
-        setPicture(e.target.files[0]);
+        console.log(e.target.value);
+        setPicture(e.target.value);
     }
 
     const handleLoginClick = () =>{
@@ -49,11 +60,12 @@ const Form = ({type,update}) =>{
 
     const handleSignSubmit = async e =>{
         e.preventDefault()
-        onFileUpload()
         if(update){
             console.log(update)
         }else{
             const user = {
+                firstName,
+                lastName,
                 email,
                 password,
                 picture
@@ -76,28 +88,11 @@ const Form = ({type,update}) =>{
         
     }
 
-    const onFileUpload = () => {
-    
-        const formData = new FormData();
-      
-        // Update the formData object
-        formData.append(
-          "myFile",
-          picture,
-          picture.name
-        );
-      
-        // Details of the uploaded file
-        console.log(picture);
-      
-        // Request made to the backend api
-        // Send formData object
-        // axios.post("api/uploadfile", formData);
-      };
-
     if(type==="SignIn"){
         return(
             <form onSubmit={handleSignSubmit}>
+                <Input label="firstname" type="text" handleChange={handleFirstNameChange} required variant="outlined" />
+                <Input label="lastname" type="text" handleChange={handleLastNameChange} required variant="outlined" />
                 <Input label="email" type="email" handleChange={handleEmailChange} required variant="outlined" />
                 <Input label="password" type='password' handleChange={handlePasswordChange} required variant='outlined'/>
                 <Input label="profil picture" type='file' handleChange={handlePictureChange} required variant='outlined'/>
