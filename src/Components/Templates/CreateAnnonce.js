@@ -34,6 +34,7 @@ const handleSubmit = async () => {
   const createProduct = await CreateProduct(product)
   setProduct(createProduct)
 }
+
   return(
   <div>
     <form onSubmit={handleSubmit}>
