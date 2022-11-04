@@ -7,11 +7,7 @@ import Buttons from "./Button";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-<<<<<<< HEAD
-
-=======
 import { UserContext } from "../Context/User";
->>>>>>> d91e8d93b4c873f31ed7b36f68692a8a55691dbd
 
 import { login, CreateUser } from "../API/Auth";
 
