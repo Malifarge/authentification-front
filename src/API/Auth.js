@@ -1,5 +1,5 @@
 const login = async user => {
-    const request = await fetch('http://localhost:5000/auth/login', {
+    const request = await fetch('https://authentification-backend.herokuapp.com/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ const login = async user => {
   }
 
   const CreateUser = async user => {
-    const request = await fetch('', {
+    const request = await fetch('https://authentification-backend.herokuapp.com/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
