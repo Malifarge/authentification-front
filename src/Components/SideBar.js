@@ -9,11 +9,11 @@ const handleNavigate = (link) => {
     Navigate(link)
 }
 
-  return <div classname="sidebar">
-    <img src="" alt="Profile" onClick={() => handleNavigate("/profile")} />
+  return <div className="sidebar">
+    <img src="" alt="Profile" onClick={() => handleNavigate("/profil")} />
     <div>
-    <img src="" alt="Favorites" onClick={() => handleNavigate("/profile")} />
-    <img src="" alt="Conversation" onClick={() => handleNavigate("/conversation")} />
+    {/* <img src="" alt="Favorites" onClick={() => handleNavigate("/favorites")} /> */}
+    {/* <img src="" alt="Conversation" onClick={() => handleNavigate("/conversation")} /> */}
     <img src={New} alt="New" onClick={() => handleNavigate("/create-annonce")} />
     </div>
     <img src="" alt="Deconnexion" onClick={() => handleNavigate("/login")} />
