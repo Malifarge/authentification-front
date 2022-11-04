@@ -5,8 +5,6 @@ import Buttons from "./Button"
 // import axios from "axios"
 
 
-import './App.css'
-
 import { useState, useContext,useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
