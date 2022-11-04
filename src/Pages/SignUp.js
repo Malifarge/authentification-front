@@ -1,7 +1,7 @@
 import CreateUser from "../Components/Templates/CreateUser"
 
-const SignIn = () => {
+const SignUp = () => {
     return <CreateUser/>
   }
   
-export default SignIn
+export default SignUp

@@ -9,7 +9,7 @@ const EditUser = () => {
         <img src={Logo} alt='Vibes'/>
         <article>
             <H1><span>V</span>ibes<span>.</span></H1>
-            <Form type="SignIn" update/>
+            <Form type="SignUp" update/>
         </article>
     </section>
   )

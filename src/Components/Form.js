@@ -54,8 +54,8 @@ const Form = ({type,update}) =>{
         navigate("/")
     }
     
-    const handleSignInClick = () =>{
-        navigate("/signin")
+    const handleSignUpClick = () =>{
+        navigate("/signUp")
     }
 
     const handleSignSubmit = async e =>{
@@ -84,11 +84,16 @@ const Form = ({type,update}) =>{
           }
       
           const { token } = await login(user)
-          setToken(token)
+
+          if(token){
+            setToken(token)
+          }else{
+            navigate("/signUp")
+          }
         
     }
 
-    if(type==="SignIn"){
+    if(type==="SignUp"){
         return(
             <form onSubmit={handleSignSubmit}>
                 <Input label="firstname" type="text" handleChange={handleFirstNameChange} required variant="outlined" />
@@ -98,7 +103,7 @@ const Form = ({type,update}) =>{
                 <Input label="profil picture" type='file' handleChange={handlePictureChange} required variant='outlined'/>
                 <div>
                     
-                    <Buttons variant="outlined" type="submit" text="Sign in" color="#FFEE55" background="#242424" border="#FFEE55" />
+                    <Buttons variant="outlined" type="submit" text="Sign up" color="#FFEE55" background="#242424" border="#FFEE55" />
                     <Buttons variant="contained" handleClick={handleLoginClick} text="Login" color="black" background="#FFEE55" border="#FFEE55" />
 
                 </div>
@@ -114,7 +119,7 @@ const Form = ({type,update}) =>{
                 <div>
 
                     <Buttons variant="outlined" type="submit"  text="Login" color="#FFEE55" background="#242424" border="#FFEE55" />
-                    <Buttons variant="contained" handleClick={handleSignInClick} text="Sign in" color="black" background="#FFEE55" border="#FFEE55"/>
+                    <Buttons variant="contained" handleClick={handleSignUpClick} text="Sign up" color="black" background="#FFEE55" border="#FFEE55"/>
 
                 </div>
                 

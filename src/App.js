@@ -9,7 +9,7 @@ import Paiements from "./Pages/Paiement"
 import Product from "./Pages/Product"
 import Products from "./Pages/Products"
 import Profil from "./Pages/Profil"
-import SignIn from "./Pages/SignIn"
+import SignUp from "./Pages/SignUp"
 import NotFound from "./Pages/NotFound"
 import Messages from "./Pages/Messages"
 import EditProfil from "./Pages/EditProfil"
@@ -26,7 +26,7 @@ const App = () =>{
           <Route path='/:id/messages' element={<Messages/>} />
           <Route path='/products' element={<Products/>} />
           <Route path='/profil' element={<Profil/>} />
-          <Route path='/signin' element={<SignIn/>} />
+          <Route path='/signUp' element={<SignUp/>} />
           <Route path='/EditProfil' element={<EditProfil/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>

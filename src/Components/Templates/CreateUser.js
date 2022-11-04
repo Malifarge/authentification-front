@@ -9,7 +9,7 @@ const CreateUser = () => {
         <img src={Logo} alt='Vibes'/>
         <article>
             <H1><span>V</span>ibes<span>.</span></H1>
-            <Form type="SignIn"/>
+            <Form type="SignUp"/>
         </article>
     </section>
   )
