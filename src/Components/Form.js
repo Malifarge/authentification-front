@@ -11,7 +11,7 @@ import { UserContext } from "../Context/User";
 
 import { login, CreateUser } from "../API/Auth";
 
-const Form = ({ type, update }) => {
+const Form = ({ type, update, className }) => {
   const navigate = useNavigate();
 
   const { setToken, user, setUser } = useContext(UserContext);
@@ -93,7 +93,7 @@ const Form = ({ type, update }) => {
 
   if (type === "SignUp") {
     return (
-      <form onSubmit={handleSignSubmit}>
+      <form className={className} onSubmit={handleSignSubmit}>
         <Input
           label="firstname"
           type="text"
@@ -151,7 +151,7 @@ const Form = ({ type, update }) => {
     );
   } else if (type === "Login") {
     return (
-      <form onSubmit={handleLogSubmit}>
+      <form className={className} onSubmit={handleLogSubmit}>
         <Input
           label="email"
           type="email"
