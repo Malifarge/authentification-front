@@ -36,11 +36,11 @@ const handleSubmit = async () => {
 }
   return(
   <div className="container">
-    <form onSubmit={handleSubmit}>
+    <form action="/single" method="POST" encType="multipart/form-data" onSubmit={handleSubmit}>
       <Input label="Product name" type="text" handleChange={handleProductNameChange} required variant="outlined" />
       <Input label="description" type='text' handleChange={handleDescriptionChange}  required variant='outlined'/>
       <Input label="price" type='number' handleChange={handlePriceChange}  required variant='outlined'/>
-      <Input label="picture" type='file' handleChange={handlePictureChange} required variant='outlined'/>  
+      <Input label="picture" type='file' name='image' handleChange={handlePictureChange} required variant='outlined'/>  
       <Buttons variant="outlined" type="submit" text="Create" color="#FFEE55" background="#242424" border="#FFEE55" />      
     </form>
   </div>
