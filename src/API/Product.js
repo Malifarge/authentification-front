@@ -1,3 +1,7 @@
+// Produits et messages
+
+// Produits
+
 const Products = async () => {
     const request = await fetch('https://authentification-backend.herokuapp.com/product', {
       headers: {
@@ -45,5 +49,46 @@ const Products = async () => {
     const response = await request.json()
     return response
   }
+
+  const DeleteProduct = async (id) => {
+    const request = await fetch(`https://authentification-backend.herokuapp.com/product/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+  
+    const response = await request.json()
+    return response
+  }
+
+// Messages
+
+const Messages = async (id) =>{
+    const request = await fetch(`https://authentification-backend.herokuapp.com/product/${id}/messages`, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      const response = await request.json()
+    
+      return response
+  }
+
+  const CreateMessages = async (Message) =>{
+    const request = await fetch(`https://authentification-backend.herokuapp.com/product/${Message.id}/messages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Message)
+      })
+      const response = await request.json()
+    
+      return response
+  }
+
+  export {Product,Products,CreateProduct,UpdateProduct,DeleteProduct,Messages,CreateMessages}
+
 
 
