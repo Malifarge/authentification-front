@@ -5,11 +5,10 @@ import { CreateProduct } from "../../API/Product"
 
 
 const Createannonce = () => {
-  const [product, setProduct] = useState(null)
   const [productName, setProductName] = useState('')
-  const [description, setDescription] = useState('')
-  const [price, setPrice] = useState(0)
-  const [picture, setPicture] = useState(null)
+  const [productDescription, setDescription] = useState('')
+  const [productPrice, setPrice] = useState(0)
+  const [PictureName, setPicture] = useState(null)
 
   const handleProductNameChange = (e) => {
   setProductName(e.target.value)
@@ -27,13 +26,13 @@ const Createannonce = () => {
 const handleSubmit = async () => {
   const Newproduct = {
     productName, 
-    description,
-    price,
-    picture
+    productDescription,
+    productPrice,
+    PictureName
 }
   const createProduct = await CreateProduct(Newproduct)
-  setProduct(createProduct)
-  console.log(product);
+  console.log(createProduct);
+
 }
   return(
   <div>
