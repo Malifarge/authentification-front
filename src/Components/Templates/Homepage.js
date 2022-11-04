@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 
@@ -14,9 +16,13 @@ const Homepage = () => {
 
   const {user} =useContext(UserContext)
 
-  useEffect(()=>{
-    const products = Products()
+  const apiProducts = async () =>{
+    const products = await Products()
     setProducts(products)
+  }
+
+  useEffect(()=>{
+    apiProducts()
   },[])
   return (
     <div className="main-container container">
