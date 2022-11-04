@@ -25,14 +25,15 @@ const Createannonce = () => {
 }
 
 const handleSubmit = async () => {
-  const product = {
+  const Newproduct = {
     productName, 
     description,
     price,
     picture
 }
-  const createProduct = await CreateProduct(product)
+  const createProduct = await CreateProduct(Newproduct)
   setProduct(createProduct)
+  console.log(product);
 }
   return(
   <div>

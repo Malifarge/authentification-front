@@ -22,16 +22,5 @@ const User = async token => {
     const response = await request.json()
     return response
   }
-
-  const UserID = async id => {
-    const request = await fetch(`https://authentification-backend.herokuapp.com/product/seller/${id}`, {
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    const response = await request.json()
   
-    return response
-  }
-  
-  export { User,UpdateUser,UserID }
+  export { User,UpdateUser }

@@ -101,7 +101,7 @@ const Seller = async (id) => {
     return response
   }
 
-  export {Product,Products,CreateProduct,UpdateProduct,DeleteProduct,Messages,CreateMessages}
+  export {Product,Products,CreateProduct,UpdateProduct,DeleteProduct,Messages,CreateMessages,Seller}
 
 
 
