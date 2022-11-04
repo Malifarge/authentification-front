@@ -1,6 +1,7 @@
 import Card from "../Card";
 import SideBar from "../SideBar";
 
+
 const Homepage = ({offers}) => {  
 
   return (
