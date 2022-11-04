@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import '../App.css'
 
 const SideBar = ({ user }) => {
 
@@ -8,7 +9,7 @@ const handleNavigate = (link) => {
     Navigate(link)
 }
 
-  return <div>
+  return <div classname="sidebar">
     <img src="" alt="Profile" onClick={() => handleNavigate("/profile")} />
     <div>
     <img src="" alt="Favorites" onClick={() => handleNavigate("/profile")} />

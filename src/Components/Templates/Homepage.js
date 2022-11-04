@@ -9,7 +9,7 @@ const Homepage = ({offers}) => {
     <SideBar/>
     <div className="offers">
     {offers.map((offer) => {
-    return (<Card/>)
+    return (<Card product={offer} />)
     })}
     </div>
     </div>

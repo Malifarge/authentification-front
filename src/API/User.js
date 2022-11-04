@@ -9,5 +9,18 @@ const User = async token => {
   
     return response
   }
+
+  const UpdateUser = async user => {
+    const request = await fetch('https://authentification-backend.herokuapp.com/user', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
   
-  export { User }
+    const response = await request.json()
+    return response
+  }
+  
+  export { User,UpdateUser }
