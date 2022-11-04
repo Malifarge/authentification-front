@@ -19,7 +19,7 @@ const Profile = ({user, favorite}) => {
   }
 
   return (
-    <div className="main-container">
+    <div className="profile-container container">
     <SideBar user={user}/>
     <div className="user">
     <img src="" alt="profile"/>
