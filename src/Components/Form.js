@@ -7,6 +7,10 @@ import Buttons from "./Button";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { UserContext } from "../Context/User";
+
+import { login, CreateUser } from "../API/Auth";
+
 const Form = ({ type, update }) => {
   const navigate = useNavigate();
 
