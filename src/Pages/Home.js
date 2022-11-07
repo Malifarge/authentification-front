@@ -1,10 +1,7 @@
 import Login from "../Components/Templates/Login"
 
-
 const Home = () => {
+  return <Login />
+}
 
-    return <Login/>
-
-  }
-  
 export default Home

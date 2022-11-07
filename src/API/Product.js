@@ -10,11 +10,19 @@ const Products = async () => {
         "Content-Type": "application/json",
       },
     }
-  );
-  const response = await request.json();
+  )
+  const response = await request.json()
 
-  return response;
-};
+  return response
+}
+
+const getProductsBySeller = async (id) => {
+  const request = await fetch(
+    `https://authentification-backend.herokuapp.com/product/sell/${id}`
+  )
+  const response = await request.json()
+  return response
+}
 
 const Product = async (id) => {
   const request = await fetch(
@@ -24,11 +32,11 @@ const Product = async (id) => {
         "Content-Type": "application/json",
       },
     }
-  );
-  const response = await request.json();
+  )
+  const response = await request.json()
 
-  return response;
-};
+  return response
+}
 
 const CreateProduct = async (Product) => {
   const request = await fetch(
@@ -40,11 +48,11 @@ const CreateProduct = async (Product) => {
       },
       body: JSON.stringify(Product),
     }
-  );
+  )
 
-  const response = await request.json();
-  return response;
-};
+  const response = await request.json()
+  return response
+}
 const CreatePicture = async (Product) => {
   const request = await fetch(
     `https://authentification-backend.herokuapp.com/picture/${Product.id}/product`,
@@ -55,11 +63,11 @@ const CreatePicture = async (Product) => {
       },
       body: JSON.stringify(Product),
     }
-  );
+  )
 
-  const response = await request.json();
-  return response;
-};
+  const response = await request.json()
+  return response
+}
 
 const UpdateProduct = async (Product) => {
   const request = await fetch(
@@ -71,11 +79,11 @@ const UpdateProduct = async (Product) => {
       },
       body: JSON.stringify(Product),
     }
-  );
+  )
 
-  const response = await request.json();
-  return response;
-};
+  const response = await request.json()
+  return response
+}
 
 const DeleteProduct = async (id) => {
   const request = await fetch(
@@ -86,11 +94,11 @@ const DeleteProduct = async (id) => {
         "Content-Type": "application/json",
       },
     }
-  );
+  )
 
-  const response = await request.json();
-  return response;
-};
+  const response = await request.json()
+  return response
+}
 
 // Messages
 
@@ -102,11 +110,11 @@ const Messages = async (id) => {
         "Content-Type": "application/json",
       },
     }
-  );
-  const response = await request.json();
+  )
+  const response = await request.json()
 
-  return response;
-};
+  return response
+}
 
 const CreateMessages = async (Message) => {
   const request = await fetch(
@@ -118,11 +126,11 @@ const CreateMessages = async (Message) => {
       },
       body: JSON.stringify(Message),
     }
-  );
-  const response = await request.json();
+  )
+  const response = await request.json()
 
-  return response;
-};
+  return response
+}
 
 //   seller
 
@@ -134,11 +142,11 @@ const Seller = async (id) => {
         "Content-Type": "application/json",
       },
     }
-  );
-  const response = await request.json();
+  )
+  const response = await request.json()
 
-  return response;
-};
+  return response
+}
 
 export {
   Product,
@@ -150,4 +158,5 @@ export {
   CreateMessages,
   Seller,
   CreatePicture,
-};
+  getProductsBySeller,
+}

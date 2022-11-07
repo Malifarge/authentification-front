@@ -1,25 +1,23 @@
-import { useContext,useEffect} from "react"
+import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 import Profile from "../Components/Templates/Profile"
 
-import { UserContext } from '../Context/User'
+import { UserContext } from "../Context/User"
 
 const Profil = () => {
+  const navigate = useNavigate()
 
-  const navigate= useNavigate()
+  const favorites = []
 
-  const favorites=[]
+  const { user } = useContext(UserContext)
 
-  const{user} = useContext(UserContext)
-
-
-  useEffect(()=>{
-    if(!user){
+  useEffect(() => {
+    if (!user) {
       navigate("/")
     }
-  },[])
-    return <div>{user && <Profile user={user} favorites={favorites}/>}</div>
-  }
-  
+  }, [])
+  return <div>{user && <Profile user={user} favorites={favorites} />}</div>
+}
+
 export default Profil

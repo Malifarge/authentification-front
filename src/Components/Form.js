@@ -1,66 +1,66 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import Input from "./Input";
-import Buttons from "./Button";
+import Input from "./Input"
+import Buttons from "./Button"
 // import axios from "axios"
 
-import { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useContext, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
-import { UserContext } from "../Context/User";
+import { UserContext } from "../Context/User"
 
-import { login, CreateUser } from "../API/Auth";
+import { login, CreateUser } from "../API/Auth"
 
 const Form = ({ type, update, className }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const { setToken, user, setUser } = useContext(UserContext);
+  const { setToken, user, setUser } = useContext(UserContext)
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [picture, setPicture] = useState(null);
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [picture, setPicture] = useState(null)
 
   useEffect(() => {
     if (user) {
-      navigate("/profil");
+      navigate("/profil")
     }
-  }, [user]);
+  }, [user])
 
   const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
-  };
+    setFirstName(e.target.value)
+  }
 
   const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
+    setLastName(e.target.value)
+  }
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+    setEmail(e.target.value)
+  }
 
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+    setPassword(e.target.value)
+  }
 
   const handlePictureChange = (e) => {
-    console.log(e.target.value);
-    setPicture(e.target.value);
-  };
+    console.log(e.target.value)
+    setPicture(e.target.value)
+  }
 
   const handleLoginClick = () => {
-    navigate("/");
-  };
+    navigate("/")
+  }
 
   const handleSignUpClick = () => {
-    navigate("/signUp");
-  };
+    navigate("/signUp")
+  }
 
   const handleSignSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (update) {
-      console.log(update);
+      console.log(update)
     } else {
       const user = {
         firstName,
@@ -68,28 +68,28 @@ const Form = ({ type, update, className }) => {
         email,
         password,
         picture,
-      };
-      const createUser = await CreateUser(user);
-      setUser(createUser);
+      }
+      const createUser = await CreateUser(user)
+      setUser(createUser)
     }
-  };
+  }
 
   const handleLogSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const user = {
       email,
       password,
-    };
+    }
 
-    const { token } = await login(user);
+    const { token } = await login(user)
 
     if (token) {
-      setToken(token);
+      setToken(token)
     } else {
-      navigate("/signUp");
+      navigate("/signUp")
     }
-  };
+  }
 
   if (type === "SignUp") {
     return (
@@ -133,7 +133,6 @@ const Form = ({ type, update, className }) => {
           label="profil picture"
           type="file"
           handleChange={handlePictureChange}
-          required
           variant="outlined"
         />
         <div className="buttons">
@@ -155,7 +154,7 @@ const Form = ({ type, update, className }) => {
           />
         </div>
       </form>
-    );
+    )
   } else if (type === "Login") {
     return (
       <form className={className} onSubmit={handleLogSubmit}>
@@ -193,8 +192,8 @@ const Form = ({ type, update, className }) => {
           />
         </div>
       </form>
-    );
+    )
   }
-};
+}
 
-export default Form;
+export default Form

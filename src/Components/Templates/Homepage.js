@@ -1,39 +1,39 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { useEffect, useState } from "react";
-import { useContext } from "react";
+import { useEffect, useState } from "react"
+import { useContext } from "react"
 
-import { UserContext } from "../../Context/User";
+import { UserContext } from "../../Context/User"
 
-import Card from "../Card";
-import SideBar from "../SideBar";
+import Card from "../Card"
+import SideBar from "../SideBar"
 
-import { Products } from "../../API/Product";
+import { Products } from "../../API/Product"
 
-const Homepage = () => {   
+const Homepage = () => {
+  const [products, setProducts] = useState([])
 
-  const [products,setProducts] = useState([])
+  const { user } = useContext(UserContext)
 
-  const {user} =useContext(UserContext)
-
-  const apiProducts = async () =>{
+  const apiProducts = async () => {
     const products = await Products()
     setProducts(products)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     apiProducts()
-  },[])
+  }, [])
   return (
     <div className="main-container container">
-    <SideBar/>
-    <div className="offers">
-    {products && products.map((product) => {
-    return (<Card product={product} key={product.productName} />)
-    })}
-    </div>
+      <SideBar />
+      <div className="offers">
+        {products &&
+          products.map((product) => {
+            return <Card product={product} key={product.productName} />
+          })}
+      </div>
     </div>
   )
 }
 
-export default Homepage;
+export default Homepage
