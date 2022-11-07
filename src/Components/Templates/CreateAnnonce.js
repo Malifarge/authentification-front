@@ -30,11 +30,11 @@ const Createannonce = () => {
       productPrice,
     }
 
-    const image = {
-      PictureName,
-    }
+    // const image = {
+    //   PictureName,
+    // }
     const createProduct = await CreateProduct(Newproduct)
-    const sendPicture = await CreatePicture(image)
+    // const sendPicture = await CreatePicture(image)
     console.log(createProduct)
   }
   return (

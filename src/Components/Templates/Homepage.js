@@ -23,6 +23,7 @@ const Homepage = () => {
   useEffect(() => {
     apiProducts()
   }, [])
+
   return (
     <div className="main-container container">
       <SideBar />
