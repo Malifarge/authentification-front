@@ -6,8 +6,8 @@
   padding: 0;
 }
 body{
-  background: url('/src/images/background.png') center no-repeat;
-  background-size: cover;
+  background-color: black ;
+ 
 }
 
 .container{
@@ -16,113 +16,3 @@ body{
   position: relative;
 }
 
-.login-container{
-  width: 100%;
-  height: 100Vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.login-container img{
-  position: absolute;
-  top: 2%;
-  left: 2%;
-}
-
-.login{
-  width: 40%;
-  height: 70vh;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #242424;
-  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.25)
-}
-
-.login form{
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-.login form button{
-  margin-left: 15px;
-}
-
-.profile-container{
-  padding-left: 140px;
-}
-
-.sidebar{
-  height: 100vh;
-  width: 100px;
-  position: absolute;
-  left: 0;
-  background: rgba(69, 45, 78, 0.72)  ;
-  box-shadow: -2px 4px 23px rgba(0, 0, 0, 0.52);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-
-.new-offer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.create-offer-container{
-  width: 50%;
-  height: 65vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 18px;
-  background: #242424;
-  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.25)
-}
-
-.create-offer-container h2{
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 50px;
-}
-
-.create-offer-container form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  gap: 5px;
-}
-
- h1{
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 500;
-  color: white;
-}
-
-h1:first-letter{
-  font-size: 80Px;
-  font-weight: 600;
-  color: #452D4EB8;
-
-}
-
-.point{
-  color:#FFEE55;
-  font-size: 100px;
-}

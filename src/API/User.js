@@ -1,5 +1,5 @@
 const User = async token => {
-    const request = await fetch('https://authentification-backend.herokuapp.com/user', {
+    const request = await fetch('', {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
@@ -11,7 +11,7 @@ const User = async token => {
   }
 
   const UpdateUser = async user => {
-    const request = await fetch('https://authentification-backend.herokuapp.com/user', {
+    const request = await fetch('', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

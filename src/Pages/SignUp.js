@@ -1,4 +1,4 @@
-import CreateUser from "../Components/Templates/CreateUser"
+import CreateUser from "../Components/CreateUser"
 
 const SignUp = () => {
     return <CreateUser/>

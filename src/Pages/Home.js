@@ -1,4 +1,4 @@
-import Login from "../Components/Templates/Login"
+import Login from "../Components/Login"
 
 
 const Home = () => {

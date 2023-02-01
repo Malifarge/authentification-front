@@ -1,27 +1,18 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 
-import Input from "./Input";
+
+
 import Buttons from "./Button";
-// import axios from "axios"
 
-import { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-import { UserContext } from "../Context/User";
+import { useState, useEffect } from "react";
 
 import { login, CreateUser } from "../API/Auth";
 
 const Form = ({ type, update, className }) => {
-  const navigate = useNavigate();
-
-  const { setToken, user, setUser } = useContext(UserContext);
 
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [picture, setPicture] = useState(null);
-
+  
   useEffect(() => {
     if (user) {
       navigate("/profil");
@@ -32,11 +23,8 @@ const Form = ({ type, update, className }) => {
     setFirstName(e.target.value);
   };
 
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
+  
+const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
@@ -44,10 +32,7 @@ const Form = ({ type, update, className }) => {
     setPassword(e.target.value);
   };
 
-  const handlePictureChange = (e) => {
-    console.log(e.target.value);
-    setPicture(e.target.value);
-  };
+ 
 
   const handleLoginClick = () => {
     navigate("/");
@@ -64,10 +49,8 @@ const Form = ({ type, update, className }) => {
     } else {
       const user = {
         firstName,
-        lastName,
         email,
         password,
-        picture,
       };
       const createUser = await CreateUser(user);
       setUser(createUser);
@@ -93,13 +76,7 @@ const Form = ({ type, update, className }) => {
 
   if (type === "SignUp") {
     return (
-      <form
-        action="/single"
-        method="POST"
-        encType="multipart/form-data"
-        className={className}
-        onSubmit={handleSignSubmit}
-      >
+      <form>
         <Input
           label="firstname"
           type="text"
@@ -107,13 +84,7 @@ const Form = ({ type, update, className }) => {
           required
           variant="outlined"
         />
-        <Input
-          label="lastname"
-          type="text"
-          handleChange={handleLastNameChange}
-          required
-          variant="outlined"
-        />
+        
         <Input
           label="email"
           type="email"
@@ -128,30 +99,19 @@ const Form = ({ type, update, className }) => {
           required
           variant="outlined"
         />
-        <Input
-          name="image"
-          label="profil picture"
-          type="file"
-          handleChange={handlePictureChange}
-          required
-          variant="outlined"
-        />
+        
         <div className="buttons">
           <Buttons
             variant="outlined"
             type="submit"
             text="Sign up"
-            color="#FFEE55"
-            background="#242424"
-            border="#FFEE55"
+           
           />
           <Buttons
             variant="contained"
             handleClick={handleLoginClick}
             text="Login"
-            color="black"
-            background="#FFEE55"
-            border="#FFEE55"
+            
           />
         </div>
       </form>
@@ -163,15 +123,12 @@ const Form = ({ type, update, className }) => {
           label="email"
           type="email"
           handleChange={handleEmailChange}
-          required
-          variant="outlined"
+         
         />
         <Input
           label="password"
           type="password"
           handleChange={handlePasswordChange}
-          required
-          variant="outlined"
         />
 
         <div>
@@ -179,17 +136,11 @@ const Form = ({ type, update, className }) => {
             variant="outlined"
             type="submit"
             text="Login"
-            color="#FFEE55"
-            background="#242424"
-            border="#FFEE55"
-          />
+            />
           <Buttons
             variant="contained"
             handleClick={handleSignUpClick}
             text="Sign up"
-            color="black"
-            background="#FFEE55"
-            border="#FFEE55"
           />
         </div>
       </form>
