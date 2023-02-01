@@ -1,5 +1,5 @@
 const login = async user => {
-    const request = await fetch('', {
+    const request = await fetch('https://dytzpxpdaohrujllvexc.supabase.co/auth/v1/token?grant_type=password', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
